@@ -1,0 +1,13 @@
+{
+  "name": "vfilm",
+  "version": "1.0.0",
+  "description": "VFilm - Professional Mentorship Platform",
+  "main": "api/auth/signup.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.1.2"
+  },
+  "scripts": {
+    "build": "echo 'Build complete'"
+  }
+}

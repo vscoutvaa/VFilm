@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm install",
+  "env": {
+    "JWT_SECRET": "@jwt_secret"
+  },
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
+}
