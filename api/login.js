@@ -1,6 +1,8 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { Client } = require('pg');
+const { PrismaClient } = require('@prisma/client');
+
+const prisma = new PrismaClient();
 
 exports.handler = async (event, context) => {
   if (event.httpMethod !== 'POST') {
@@ -9,10 +11,6 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({ error: 'Method not allowed' }),
     };
   }
-
-  const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-  });
 
   try {
     const { email, password } = JSON.parse(event.body || '{}');
@@ -24,28 +22,21 @@ exports.handler = async (event, context) => {
       };
     }
 
-    await client.connect();
-
     // Find user
-    const result = await client.query(
-      'SELECT * FROM users WHERE email = $1',
-      [email]
-    );
+    const user = await prisma.user.findUnique({
+      where: { email },
+    });
 
-    if (result.rows.length === 0) {
-      await client.end();
+    if (!user) {
       return {
         statusCode: 401,
         body: JSON.stringify({ error: 'Invalid credentials' }),
       };
     }
 
-    const user = result.rows[0];
-
     // Check password
     const isValidPassword = await bcrypt.compare(password, user.password);
     if (!isValidPassword) {
-      await client.end();
       return {
         statusCode: 401,
         body: JSON.stringify({ error: 'Invalid credentials' }),
@@ -59,8 +50,6 @@ exports.handler = async (event, context) => {
       { expiresIn: '7d' }
     );
 
-    await client.end();
-
     return {
       statusCode: 200,
       body: JSON.stringify({
@@ -70,17 +59,18 @@ exports.handler = async (event, context) => {
           id: user.id,
           email: user.email,
           role: user.role,
-          firstName: user.first_name,
-          lastName: user.last_name,
+          firstName: user.firstName,
+          lastName: user.lastName,
         },
       }),
     };
   } catch (error) {
-    await client.end();
     return {
       statusCode: 500,
       body: JSON.stringify({ error: error.message }),
     };
+  } finally {
+    await prisma.$disconnect();
   }
 };
 

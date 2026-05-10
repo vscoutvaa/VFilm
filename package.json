@@ -4,10 +4,12 @@
   "description": "VFilm - Professional Mentorship Platform",
   "main": "api/auth/signup.js",
   "dependencies": {
+    "@prisma/client": "^7.8.0",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
-    "pg": "^8.11.3"
-}
+    "pg": "^8.11.3",
+    "prisma": "^7.8.0"
+  },
   "scripts": {
     "build": "echo 'Build complete'"
   }
