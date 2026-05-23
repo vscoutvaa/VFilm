@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create Your Account — VFilm</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">V</span>
+      <span class="logo-text">FILM</span>
+      <span class="logo-sub">Vanguard Legacy</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link hide-mobile">Home</a>
+      <a href="about.html" class="nav-link hide-mobile">About</a>
+      <button class="btn btn-outline-gold" onclick="window.location.href='index.html'">Already Have an Account?</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="signup-hero">
+  <div class="container">
+    <span class="eyebrow" style="justify-content:center;">Join VFilm</span>
+    <h1>Pick Your <span class="accent">Lane.</span></h1>
+    <p>Three account types. Different journeys. Same mission: get young athletes to the pros with the truth, not the hype.</p>
+  </div>
+</section>
+
+<!-- ACCOUNT TYPE CARDS -->
+<section class="section" id="typeSelection">
+  <div class="container">
+    <div class="account-type-grid">
+
+      <!-- YOUNG ATHLETE -->
+      <div class="account-card" onclick="selectType('young')">
+        <div class="icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/></svg>
+        </div>
+        <h3>Young Athlete</h3>
+        <p class="role-desc">9th grade through college players actively pursuing the next level. Build your profile, share your film, get matched with pros.</p>
+        <ul class="features">
+          <li>Full recruiting profile (diet, physicals, story, film, academics)</li>
+          <li>AI Mentor Match with verified pros &amp; coaches</li>
+          <li>Game film auto-clipping (Phase 4)</li>
+          <li>Ask questions directly to pros</li>
+        </ul>
+        <div class="verification-note">
+          🛡 Verification required: school enrollment + roster confirmation. Athletes under 18 require a parent/guardian email on file.
+        </div>
+        <button class="btn btn-gold btn-block" style="margin-top:18px;">Get Started →</button>
+      </div>
+
+      <!-- PROFESSIONAL -->
+      <div class="account-card" onclick="selectType('pro')">
+        <div class="icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8z"/></svg>
+        </div>
+        <h3>Professional</h3>
+        <p class="role-desc">Active pros, retired pros, and professional coaches. Share your story, mentor the next class, give film breakdowns to young athletes.</p>
+        <ul class="features">
+          <li>Public mentor profile (story, accomplishments)</li>
+          <li>Answer questions from young athletes</li>
+          <li>Review and critique uploaded film</li>
+          <li>Get matched to athletes who fit your path</li>
+        </ul>
+        <div class="verification-note">
+          🛡 Verification required: government ID + league/team roster check + (active pros) social account cross-link.
+        </div>
+        <button class="btn btn-gold btn-block" style="margin-top:18px;">Get Started →</button>
+      </div>
+
+      <!-- FAN -->
+      <div class="account-card" onclick="selectType('fan')">
+        <div class="icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Fan</h3>
+        <p class="role-desc">Follow athletes you believe in. Get notified when they post film, hit milestones, or get matched to pros.</p>
+        <ul class="features">
+          <li>Follow any verified athlete on VFilm</li>
+          <li>Notifications for milestones &amp; new film</li>
+          <li>Like and bookmark Q&amp;A threads</li>
+          <li>Vote on the questions that matter</li>
+        </ul>
+        <div class="verification-note">
+          🛡 Email verification only. Must be 13 or older to create a fan account.
+        </div>
+        <button class="btn btn-gold btn-block" style="margin-top:18px;">Get Started →</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== YOUNG ATHLETE FORM ===== -->
+<section class="section" id="form-young" style="display:none;background:var(--gray-50);">
+  <div class="container">
+    <div class="signup-form-wrap">
+      <div class="signup-form-header">
+        <h2>Young Athlete Profile</h2>
+        <span class="role-badge">Step 1 of 4</span>
+      </div>
+      <form class="signup-form-body" onsubmit="handleSignup(event, 'young')">
+        <div class="field-section">
+          <div class="field-section-title">Athlete Info</div>
+          <div class="field-section-desc">The basics. We'll use this on your profile and for verification.</div>
+          <div class="form-grid">
+            <div class="field"><label>First Name *</label><input type="text" required /></div>
+            <div class="field"><label>Last Name *</label><input type="text" required /></div>
+            <div class="field field-full"><label>Email *</label><input type="email" required /></div>
+            <div class="field"><label>Date of Birth *</label><input type="date" required /></div>
+            <div class="field">
+              <label>Graduation Year *</label>
+              <select required>
+                <option value="">Select year</option>
+                <option>2026</option><option>2027</option><option>2028</option>
+                <option>2029</option><option>2030</option><option>2031</option><option>2032</option>
+              </select>
+            </div>
+            <div class="field"><label>High School / College *</label><input type="text" required placeholder="e.g. Lincoln HS" /></div>
+            <div class="field">
+              <label>Position *</label>
+              <select required>
+                <option value="">Select position</option>
+                <option>Point Guard</option><option>Shooting Guard</option>
+                <option>Small Forward</option><option>Power Forward</option><option>Center</option>
+              </select>
+            </div>
+            <div class="field"><label>Height</label><input type="text" placeholder='6&apos; 2"' /></div>
+            <div class="field"><label>Weight (lbs)</label><input type="number" placeholder="185" /></div>
+            <div class="field field-full"><label>City, State</label><input type="text" placeholder="Brooklyn, NY" /></div>
+          </div>
+        </div>
+
+        <div class="field-section">
+          <div class="field-section-title">Account</div>
+          <div class="form-grid">
+            <div class="field"><label>Password *</label><input type="password" required minlength="8" /></div>
+            <div class="field"><label>Confirm Password *</label><input type="password" required minlength="8" /></div>
+          </div>
+        </div>
+
+        <div class="field-section">
+          <div class="field-section-title">Parent / Guardian (Under 18)</div>
+          <div class="field-section-desc">Required for minors. Your parent or guardian will be emailed to confirm consent.</div>
+          <div class="form-grid">
+            <div class="field"><label>Parent/Guardian Name</label><input type="text" /></div>
+            <div class="field"><label>Parent/Guardian Email</label><input type="email" /></div>
+          </div>
+        </div>
+
+        <div class="verification-block">
+          <div class="ver-title">Athlete Verification</div>
+          <p>We confirm every young athlete to keep this community safe. After signup we'll request: (1) a school enrollment confirmation, (2) a coach/AD email to verify roster status, and (3) photos of you in jersey for film tool calibration.</p>
+          <div style="font-size:0.8rem; color:var(--gray-500);">Verification options under consideration: Persona, Stripe Identity, manual review. Final method confirmed before launch.</div>
+        </div>
+
+        <div style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-outline-gold" onclick="backToTypes()">← Back</button>
+          <button type="submit" class="btn btn-gold" style="flex:1;">Create Profile &amp; Continue →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROFESSIONAL FORM ===== -->
+<section class="section" id="form-pro" style="display:none;background:var(--gray-50);">
+  <div class="container">
+    <div class="signup-form-wrap">
+      <div class="signup-form-header">
+        <h2>Professional Profile</h2>
+        <span class="role-badge">Step 1 of 3</span>
+      </div>
+      <form class="signup-form-body" onsubmit="handleSignup(event, 'pro')">
+        <div class="field-section">
+          <div class="field-section-title">Pro Type</div>
+          <div class="form-grid">
+            <div class="field field-full">
+              <label>I am a *</label>
+              <select required>
+                <option value="">Select your status</option>
+                <option>Active Professional Athlete</option>
+                <option>Retired Professional Athlete</option>
+                <option>Professional Coach (current)</option>
+                <option>Professional Coach (former)</option>
+              </select>
+            </div>
+            <div class="field"><label>Sport *</label>
+              <select required>
+                <option>Basketball</option>
+                <option disabled>Football (coming soon)</option>
+                <option disabled>Baseball (coming soon)</option>
+                <option disabled>Soccer (coming soon)</option>
+              </select>
+            </div>
+            <div class="field"><label>Position / Role</label><input type="text" placeholder="e.g. Point Guard, Head Coach" /></div>
+          </div>
+        </div>
+
+        <div class="field-section">
+          <div class="field-section-title">Identity</div>
+          <div class="form-grid">
+            <div class="field"><label>First Name *</label><input type="text" required /></div>
+            <div class="field"><label>Last Name *</label><input type="text" required /></div>
+            <div class="field field-full"><label>Email *</label><input type="email" required /></div>
+            <div class="field"><label>Password *</label><input type="password" required minlength="8" /></div>
+            <div class="field"><label>Confirm Password *</label><input type="password" required minlength="8" /></div>
+          </div>
+        </div>
+
+        <div class="field-section">
+          <div class="field-section-title">Pro Background</div>
+          <div class="form-grid">
+            <div class="field field-full"><label>Teams / Years Active *</label><input type="text" required placeholder='e.g. "Brooklyn Nets 2018-2022, EuroLeague 2022-2024"' /></div>
+            <div class="field field-full"><label>Notable Accomplishments</label><textarea rows="3" placeholder="Championships, awards, milestones..."></textarea></div>
+            <div class="field"><label>LinkedIn URL</label><input type="url" placeholder="https://linkedin.com/in/..." /></div>
+            <div class="field"><label>Verified Social (X/Instagram)</label><input type="text" placeholder="@yourhandle" /></div>
+          </div>
+        </div>
+
+        <div class="verification-block">
+          <div class="ver-title">Pro Verification</div>
+          <p>To protect young athletes, every pro account is verified before being public. After signup we'll request: (1) government ID, (2) team/league confirmation, (3) cross-link to a verified social account (active pros). For coaches: program affiliation letter.</p>
+        </div>
+
+        <div style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-outline-gold" onclick="backToTypes()">← Back</button>
+          <button type="submit" class="btn btn-gold" style="flex:1;">Submit for Verification →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAN FORM ===== -->
+<section class="section" id="form-fan" style="display:none;background:var(--gray-50);">
+  <div class="container">
+    <div class="signup-form-wrap">
+      <div class="signup-form-header">
+        <h2>Fan Account</h2>
+        <span class="role-badge">Quick Setup</span>
+      </div>
+      <form class="signup-form-body" onsubmit="handleSignup(event, 'fan')">
+        <div class="field-section">
+          <div class="form-grid">
+            <div class="field"><label>First Name *</label><input type="text" required /></div>
+            <div class="field"><label>Last Name *</label><input type="text" required /></div>
+            <div class="field field-full"><label>Email *</label><input type="email" required /></div>
+            <div class="field"><label>Date of Birth *</label><input type="date" required /></div>
+            <div class="field"><label>Country</label><input type="text" /></div>
+            <div class="field"><label>Password *</label><input type="password" required minlength="8" /></div>
+            <div class="field"><label>Confirm Password *</label><input type="password" required minlength="8" /></div>
+          </div>
+        </div>
+
+        <div class="field-section">
+          <div class="field-section-title">Interests (Optional)</div>
+          <div class="field-section-desc">Tell us who you'd love to follow.</div>
+          <div class="form-grid">
+            <div class="field"><label>Favorite Athlete Type</label>
+              <select>
+                <option>High School Players</option>
+                <option>College Players</option>
+                <option>Active Pros</option>
+                <option>Retired Pros &amp; Coaches</option>
+                <option>All of the above</option>
+              </select>
+            </div>
+            <div class="field"><label>Region</label><input type="text" placeholder="e.g. Northeast US" /></div>
+          </div>
+        </div>
+
+        <div class="verification-block">
+          <div class="ver-title">Fan Verification</div>
+          <p>Just confirm your email — we'll send a verification link. You must be 13 or older. Fans can follow, like, and bookmark; only verified athletes can post.</p>
+        </div>
+
+        <div style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-outline-gold" onclick="backToTypes()">← Back</button>
+          <button type="submit" class="btn btn-gold" style="flex:1;">Create Account →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark"><span class="gold">V</span>FILM</div>
+        <p>VFilm is the path-to-pro app for young basketball players. We connect athletes to professional mentors so the next step is never a guess.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="index.html">Sign In</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Browse</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="video.html">Film Tool</a></li>
+          <li><a href="dashboard.html">Dashboard Preview</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Vanguard Legacy · VFilm.</div>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" style="position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--navy-900);color:var(--white);padding:14px 24px;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);border-left:4px solid var(--gold-500);font-size:0.92rem;opacity:0;transition:transform 0.3s,opacity 0.3s;z-index:2000;pointer-events:none;"></div>
+
+<script src="script.js"></script>
+<script>
+function selectType(t) {
+  document.getElementById('typeSelection').style.display = 'none';
+  document.getElementById('form-young').style.display = 'none';
+  document.getElementById('form-pro').style.display = 'none';
+  document.getElementById('form-fan').style.display = 'none';
+  document.getElementById('form-' + t).style.display = 'block';
+  window.scrollTo({ top: 280, behavior: 'smooth' });
+}
+function backToTypes() {
+  document.getElementById('typeSelection').style.display = 'block';
+  document.getElementById('form-young').style.display = 'none';
+  document.getElementById('form-pro').style.display = 'none';
+  document.getElementById('form-fan').style.display = 'none';
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+}
+function handleSignup(e, t) {
+  e.preventDefault();
+  showNotice("Prototype: account creation isn't wired yet — this is where Supabase auth will fire.");
+}
+</script>
+</body>
+</html>

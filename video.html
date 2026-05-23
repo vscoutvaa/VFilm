@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Film Tool — VFilm</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">V</span>
+      <span class="logo-text">FILM</span>
+      <span class="logo-sub">Vanguard Legacy</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link hide-mobile">Home</a>
+      <a href="about.html" class="nav-link hide-mobile">About</a>
+      <a href="dashboard.html" class="nav-link hide-mobile">Dashboard</a>
+      <button class="btn btn-outline-gold" onclick="window.location.href='signup.html'">Sign Up</button>
+    </div>
+  </div>
+</nav>
+
+<section class="placeholder-hero">
+  <div class="container">
+    <div class="content">
+      <span class="coming-soon-badge">Phase 4 · Coming Soon</span>
+      <span class="eyebrow">Film Splitter Tool</span>
+      <h1>Drop a game. <span class="accent">Get clipped.</span></h1>
+      <p class="lead">Upload a full game film and a few photos of yourself in jersey. Our AI finds every play you touched, clips them, and ships them straight to your profile dashboard — ready for pro feedback.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="signup.html" class="btn btn-gold btn-lg">Get Early Access</a>
+        <a href="#how-it-works" class="btn btn-outline-light btn-lg">How It Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">How the Film Tool Works</span>
+      <h2>Game In. Highlights Out.</h2>
+      <p>The same kind of AI clipping tools the pros use — built around finding YOU in the chaos of a real game.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1100px;margin:0 auto;">
+      <div class="dash-card">
+        <div style="font-family:var(--font-display);font-size:2.4rem;color:var(--gold-500);line-height:1;">01</div>
+        <h3>Calibrate</h3>
+        <p>Upload 3-5 jersey photos so the AI learns your face, number, and team colors.</p>
+      </div>
+      <div class="dash-card">
+        <div style="font-family:var(--font-display);font-size:2.4rem;color:var(--gold-500);line-height:1;">02</div>
+        <h3>Upload Film</h3>
+        <p>Drop a full game (up to 2GB on the free tier). Processing kicks off automatically.</p>
+      </div>
+      <div class="dash-card">
+        <div style="font-family:var(--font-display);font-size:2.4rem;color:var(--gold-500);line-height:1;">03</div>
+        <h3>Review Clips</h3>
+        <p>AI returns every play you touched. Accept, trim, label, or delete each one.</p>
+      </div>
+      <div class="dash-card">
+        <div style="font-family:var(--font-display);font-size:2.4rem;color:var(--gold-500);line-height:1;">04</div>
+        <h3>File &amp; Share</h3>
+        <p>Approved clips drop into your profile folders. Send to matched pros for critique.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--navy-900);color:var(--white);">
+  <div class="container" style="text-align:center;max-width:760px;">
+    <span class="eyebrow" style="justify-content:center;">Tech Note</span>
+    <h2 style="text-transform:uppercase;font-size:2rem;margin:18px 0 16px;">Built on Proven Sports AI.</h2>
+    <p style="color:rgba(255,255,255,0.78);">Rather than reinvent the wheel, the Film Tool will integrate with established sports-AI services (AWS Rekognition Video, Hudl-class APIs, or specialized partners). That means launch-grade reliability instead of multi-year ML research — and lower cost per clip for athletes.</p>
+    <div style="margin-top:24px;color:var(--gold-400);font-size:0.9rem;letter-spacing:0.08em;text-transform:uppercase;">Final partner selection: targeted before Phase 4 build.</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark"><span class="gold">V</span>FILM</div>
+        <p>VFilm is the path-to-pro app for young basketball players.</p>
+      </div>
+      <div class="footer-col"><h4>Browse</h4><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="video.html" class="active">Film Tool</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Account</h4><ul>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="index.html">Sign In</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><div>© 2026 Vanguard Legacy · VFilm.</div></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
