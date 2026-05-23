@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VFilm — Path to the Pros</title>
+<meta name="description" content="VFilm connects young athletes to professional athletes and coaches. Build your recruiting profile, get pro feedback on your film, and learn the path." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">V</span>
+      <span class="logo-text">FILM</span>
+      <span class="logo-sub">Vanguard Legacy</span>
+    </a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link hide-mobile">About</a>
+      <a href="video.html" class="nav-link hide-mobile">Film Tool</a>
+      <a href="dashboard.html" class="nav-link hide-mobile">Dashboard</a>
+      <a href="#feedback" class="nav-link hide-mobile" onclick="openFeedback(event)">Feedback</a>
+      <a href="#subscribe" class="nav-link hide-mobile" onclick="scrollToWaitlist(event)">Subscribe</a>
+      <button class="nav-icon-btn nav-icon-wrap" title="Notifications" onclick="showNotice('Sign in to view notifications')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <span class="badge">3</span>
+      </button>
+      <button class="btn btn-outline-gold" onclick="openLogin()">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Vanguard Legacy &nbsp;·&nbsp; Path to the Pros</span>
+    <h1>Build the path.<br/><span class="accent">Earn the spot.</span></h1>
+    <p class="lead">VFilm is where young basketball players document their journey, get direct feedback from professional athletes and coaches, and learn exactly what comes next.</p>
+    <div class="hero-cta-row">
+      <a href="signup.html" class="btn btn-gold btn-lg">Create Your Account</a>
+      <a href="about.html" class="btn btn-outline-light btn-lg">How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="num">2,184</div>
+        <div class="label">Young Athletes</div>
+      </div>
+      <div class="stat">
+        <div class="num">147</div>
+        <div class="label">Pros &amp; Coaches</div>
+      </div>
+      <div class="stat">
+        <div class="num">9,612</div>
+        <div class="label">Film Clips Shared</div>
+      </div>
+      <div class="stat">
+        <div class="num">38,420</div>
+        <div class="label">Fans Following</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI MATCH SECTION ============ -->
+<section class="section section-ai">
+  <div class="container">
+    <div class="ai-card">
+      <div class="ai-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z"/></svg>
+      </div>
+      <span class="eyebrow" style="justify-content:center; color:var(--gold-400);">AI Mentorship Match</span>
+      <h3>Get matched with a pro who's been your path.</h3>
+      <p>Our AI reads your position, goals, school stage, and progress — then matches you with active pros, retired pros, or coaches who walked a similar road. Ask questions. Get real answers.</p>
+      <button class="btn btn-gold btn-lg" id="aiMatchBtn" aria-disabled="true" onclick="handleAiMatch()">
+        🔒 &nbsp; Find My Mentor Match
+      </button>
+      <div class="lock-msg">
+        Available to verified athletes only. <a href="signup.html">Create an account</a> or <a href="#" onclick="openLogin(); return false;">sign in</a> to unlock.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ YOUNG ATHLETE SUCCESS STORIES ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Athlete Stories</span>
+      <h2>From the App to the Floor</h2>
+      <p>Real young athletes who used VFilm to document their growth and earn looks from the next level.</p>
+    </div>
+    <div class="carousel" id="youngCarousel">
+      <div class="carousel-track" id="youngTrack">
+        <div class="story-card">
+          <div class="story-image">
+            <div>
+              <div class="tag">Class of 2027 &nbsp;·&nbsp; PG</div>
+              <div class="place">Marcus Chen</div>
+            </div>
+          </div>
+          <div class="story-body">
+            <span class="eyebrow">Year 2 on VFilm</span>
+            <h3>From bench to D1 commit.</h3>
+            <p class="quote">"I uploaded every game my sophomore year. A retired pro guard on VFilm critiqued my pick-and-roll reads — three coaches reached out within a month."</p>
+            <div class="meta">Committed to Marquette &nbsp;·&nbsp; April 2026</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-image">
+            <div>
+              <div class="tag">Class of 2026 &nbsp;·&nbsp; SF</div>
+              <div class="place">Jasmine Reyes</div>
+            </div>
+          </div>
+          <div class="story-body">
+            <span class="eyebrow">Year 1 on VFilm</span>
+            <h3>Recruited from highlight reels.</h3>
+            <p class="quote">"The film tool clipped every play I touched. Pro coaches told me what to drill that summer — by senior season my efficiency had jumped 18%."</p>
+            <div class="meta">Committed to South Carolina &nbsp;·&nbsp; March 2026</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-image">
+            <div>
+              <div class="tag">Class of 2028 &nbsp;·&nbsp; C</div>
+              <div class="place">Tyrese Williams</div>
+            </div>
+          </div>
+          <div class="story-body">
+            <span class="eyebrow">Year 1 on VFilm</span>
+            <h3>Discipline beats hype.</h3>
+            <p class="quote">"My matched mentor told me to throw out the mixtape mindset. We built a real progression plan around academics and footwork."</p>
+            <div class="meta">5⭐ Sophomore &nbsp;·&nbsp; Top 30 National</div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-dot active" data-track="youngTrack" data-idx="0" aria-label="Story 1"></button>
+        <button class="carousel-dot" data-track="youngTrack" data-idx="1" aria-label="Story 2"></button>
+        <button class="carousel-dot" data-track="youngTrack" data-idx="2" aria-label="Story 3"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Q&A SECTION ============ -->
+<section class="section section-qa">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Popular Questions</span>
+      <h2>Asked by Athletes. Answered by Pros.</h2>
+      <p>Top-voted questions from young athletes and fans — answered by verified professionals.</p>
+    </div>
+    <div class="qa-list">
+      <div class="qa-card">
+        <div>
+          <div class="q-header">
+            <span class="badge-young">Young Athlete</span>
+            <span class="q-asker">Asked by D. Patel · 2 days ago</span>
+          </div>
+          <div class="q-text">How do I get college coaches to actually watch my film instead of skipping it?</div>
+          <div class="q-answer">
+            <span class="q-answer-by">Coach R. Mendoza <span class="pro-tag">Pro Verified</span></span>
+            <div>Lead with 3 plays that show decision-making, not just dunks. Coaches watch the first 30 seconds — if it's hero ball they tune out. Show how you make teammates better.</div>
+          </div>
+        </div>
+        <div class="qa-votes">
+          <button class="vote-btn up" data-id="q1" data-dir="up">👍 <span class="count">214</span></button>
+          <button class="vote-btn down" data-id="q1" data-dir="down">👎 <span class="count">8</span></button>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div>
+          <div class="q-header">
+            <span class="badge-young">Young Athlete</span>
+            <span class="q-asker">Asked by M. Okafor · 5 days ago</span>
+          </div>
+          <div class="q-text">Should I commit to a smaller D1 program now or wait for bigger offers?</div>
+          <div class="q-answer">
+            <span class="q-answer-by">J. Holloway, Retired NBA <span class="pro-tag">Pro Verified</span></span>
+            <div>Fit > rank. Programs where you'll actually play minutes develop better than benching at a brand-name school. Ask: who's on the depth chart at your position next year?</div>
+          </div>
+        </div>
+        <div class="qa-votes">
+          <button class="vote-btn up" data-id="q2" data-dir="up">👍 <span class="count">186</span></button>
+          <button class="vote-btn down" data-id="q2" data-dir="down">👎 <span class="count">11</span></button>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div>
+          <div class="q-header">
+            <span class="badge-young">Young Athlete</span>
+            <span class="q-asker">Asked by S. Tran · 1 week ago</span>
+          </div>
+          <div class="q-text">What does a real off-season look like for a college-bound junior?</div>
+          <div class="q-answer">
+            <span class="q-answer-by">Coach A. Sterling <span class="pro-tag">Pro Verified</span></span>
+            <div>4 days/week skill work, 2 days lift, 1 active recovery. Skill work means 60% weakness drills, 40% maintenance. Add film study Sundays — yours and the pros'.</div>
+          </div>
+        </div>
+        <div class="qa-votes">
+          <button class="vote-btn up" data-id="q3" data-dir="up">👍 <span class="count">142</span></button>
+          <button class="vote-btn down" data-id="q3" data-dir="down">👎 <span class="count">5</span></button>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div>
+          <div class="q-header">
+            <span class="badge-young">Fan</span>
+            <span class="q-asker">Asked by Anonymous · 3 days ago</span>
+          </div>
+          <div class="q-text">How important is GPA if I want to play overseas right out of high school?</div>
+          <div class="q-answer">
+            <span class="q-answer-by">D. Romero, Pro EuroLeague <span class="pro-tag">Pro Verified</span></span>
+            <div>Less direct for overseas, but transcripts get requested for visas, agent reps, and most prep-to-pro programs. Don't shut doors you'll wish you'd left open.</div>
+          </div>
+        </div>
+        <div class="qa-votes">
+          <button class="vote-btn up" data-id="q4" data-dir="up">👍 <span class="count">98</span></button>
+          <button class="vote-btn down" data-id="q4" data-dir="down">👎 <span class="count">14</span></button>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="#" class="btn btn-navy" onclick="showNotice('Sign in to ask a question'); return false;">Ask a Question →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRO ATHLETE STORIES ============ -->
+<section class="section section-pro">
+  <div class="container">
+    <div class="section-header dark">
+      <span class="eyebrow">Pros on the App</span>
+      <h2>The Mentors. The Receipts.</h2>
+      <p>Active pros, retired pros, and professional coaches sharing how they made it — and helping the next class get there.</p>
+    </div>
+    <div class="carousel" id="proCarousel">
+      <div class="carousel-track" id="proTrack">
+        <div class="story-card">
+          <div class="story-image">
+            <div>
+              <div class="tag">Retired · Guard</div>
+              <div class="place">James Holloway</div>
+            </div>
+          </div>
+          <div class="story-body">
+            <span class="eyebrow">12 Seasons · NBA</span>
+            <h3>The shot wasn't the answer.</h3>
+            <p class="quote">"Every kid asks me about the shot. The real edge was how I prepared the night before. I'm here to teach the part nobody films."</p>
+            <div class="meta">Mentoring 24 athletes on VFilm</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-image">
+            <div>
+              <div class="tag">Active · Forward</div>
+              <div class="place">Renée Carter</div>
+            </div>
+          </div>
+          <div class="story-body">
+            <span class="eyebrow">WNBA · 6 Seasons</span>
+            <h3>I needed someone in high school.</h3>
+            <p class="quote">"I had no one to tell me what mattered. I'm trying to be that person for the next group of girls grinding through their junior season alone."</p>
+            <div class="meta">Mentoring 18 athletes on VFilm</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-image">
+            <div>
+              <div class="tag">Head Coach</div>
+              <div class="place">Coach Alan Sterling</div>
+            </div>
+          </div>
+          <div class="story-body">
+            <span class="eyebrow">D1 Assistant · 9 Years</span>
+            <h3>Most kids miss for the wrong reasons.</h3>
+            <p class="quote">"Skill isn't the problem 90% of the time. Habits, academics, and film IQ are. VFilm makes that visible for the kids who care."</p>
+            <div class="meta">Mentoring 31 athletes on VFilm</div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-dot active" data-track="proTrack" data-idx="0" aria-label="Pro 1"></button>
+        <button class="carousel-dot" data-track="proTrack" data-idx="1" aria-label="Pro 2"></button>
+        <button class="carousel-dot" data-track="proTrack" data-idx="2" aria-label="Pro 3"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WAITLIST / SUBSCRIBE ============ -->
+<section class="section" id="subscribe" style="background:var(--white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Early Access</span>
+      <h2>Be First on the Floor.</h2>
+      <p>VFilm is rolling out to basketball players first. Drop your email — we'll let you know when verification opens in your region.</p>
+    </div>
+    <form class="waitlist-form" onsubmit="handleWaitlist(event)" style="max-width:520px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;">
+      <input type="email" placeholder="your@email.com" required style="flex:1;min-width:240px;padding:14px 16px;border:1px solid var(--gray-200);border-radius:var(--radius-md);font-family:inherit;" />
+      <button type="submit" class="btn btn-gold">Join Waitlist</button>
+      <div id="waitlistMsg" style="width:100%;font-size:0.88rem;color:var(--gold-500);font-weight:600;"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-mark"><span class="gold">V</span>FILM</div>
+        <p>VFilm is the path-to-pro app for young basketball players. We connect athletes to professional mentors so the next step is never a guess.</p>
+      </div>
+      <div class="footer-col">
+        <h4>For Athletes</h4>
+        <ul>
+          <li><a href="signup.html">Create Profile</a></li>
+          <li><a href="video.html">Film Tool</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="#" onclick="showNotice('Coming soon'); return false;">Mentor Match</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>For Pros</h4>
+        <ul>
+          <li><a href="signup.html">Pro Verification</a></li>
+          <li><a href="#" onclick="showNotice('Coming soon'); return false;">Mentor Program</a></li>
+          <li><a href="#" onclick="showNotice('Coming soon'); return false;">Pro Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="#" onclick="showNotice('Coming soon'); return false;">Press</a></li>
+          <li><a href="#" onclick="showNotice('Coming soon'); return false;">Privacy</a></li>
+          <li><a href="#" onclick="showNotice('Coming soon'); return false;">Terms</a></li>
+          <li><a href="#" onclick="showNotice('Coming soon'); return false;">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Vanguard Legacy · VFilm. All rights reserved.</div>
+      <div>Built for young athletes serious about the path.</div>
+      <a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;" aria-label="Back to top">↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ LOGIN MODAL ============ -->
+<div class="modal-backdrop" id="loginModal" onclick="if(event.target===this) closeLogin()">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Sign In</h3>
+      <button class="modal-close" onclick="closeLogin()" aria-label="Close">✕</button>
+    </div>
+    <form class="modal-body" onsubmit="handleLogin(event)">
+      <div class="field">
+        <label>Email</label>
+        <input type="email" required placeholder="your@email.com" />
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" required placeholder="••••••••" />
+      </div>
+      <button type="submit" class="btn btn-gold btn-block">Sign In</button>
+    </form>
+    <div class="modal-footer">
+      New here? <a href="signup.html">Create an account</a><br/>
+      <a href="#" onclick="showNotice('Password reset coming soon'); return false;" style="font-size:0.82rem;color:var(--gray-500);">Forgot password?</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FEEDBACK MODAL ============ -->
+<div class="modal-backdrop" id="feedbackModal" onclick="if(event.target===this) closeFeedback()">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Send Feedback</h3>
+      <button class="modal-close" onclick="closeFeedback()" aria-label="Close">✕</button>
+    </div>
+    <form class="modal-body" onsubmit="handleFeedback(event)">
+      <div class="field">
+        <label>What's on your mind?</label>
+        <textarea rows="5" required placeholder="Tell us what's working, what isn't, or what you'd love to see."></textarea>
+      </div>
+      <div class="field">
+        <label>Your Email (optional)</label>
+        <input type="email" placeholder="your@email.com" />
+      </div>
+      <button type="submit" class="btn btn-gold btn-block">Send Feedback</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ NOTICE TOAST ============ -->
+<div id="toast" style="position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--navy-900);color:var(--white);padding:14px 24px;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);border-left:4px solid var(--gold-500);font-size:0.92rem;opacity:0;transition:transform 0.3s,opacity 0.3s;z-index:2000;pointer-events:none;"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
