@@ -8,7 +8,7 @@ VFilm is the flagship product of **Vanguard Legacy**, a business focused on guid
 
 - **Young Athletes** (9th grade – college): build their recruiting profile, share film, get matched with pro mentors
 - **Professionals** (active pros, retired pros, professional coaches): mentor young athletes, answer questions, critique film
-- **Fans** (13+): follow verified athletes, get notifications, vote on community Q&A
+- **Fans** (13+): ask verified pros questions, join live Q&A sessions, vote on community Q&A, follow athletes
 
 **Launch focus:** basketball-only at v1. Football, baseball, soccer scaffolded in the codebase, gated off until rollout.
 

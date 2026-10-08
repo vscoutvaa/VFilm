@@ -10,7 +10,7 @@
 
 1. **Young Athletes** (grade 9 through end of college) — build recruiting profiles, share film, ask pros questions
 2. **Professionals** — active pros, retired pros, current pro coaches, former pro coaches — mentor youth, critique film, answer questions
-3. **Fans** (13+) — follow athletes, get notifications, vote on Q&A
+3. **Fans** (13+): ask verified pros questions (submitted questions are moderated, and pros choose which to answer), join live Q&A sessions, vote on Q&A, follow athletes
 
 **Sport at launch:** basketball only. Football, baseball, soccer are scaffolded in the backend data model with a `sport` field but gated off in the UI until rollout.
 
