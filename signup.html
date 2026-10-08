@@ -48,7 +48,7 @@
         <ul class="features">
           <li>Full recruiting profile (diet, physicals, story, film, academics)</li>
           <li>AI Mentor Match with verified pros &amp; coaches</li>
-          <li>Game film auto-clipping (Phase 4)</li>
+          <li>Game film auto-clipping (coming soon)</li>
           <li>Ask questions directly to pros</li>
         </ul>
         <div class="verification-note">
@@ -107,35 +107,37 @@
         <h2>Young athlete profile</h2>
         <div class="form-progress"><div class="form-progress-bar" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div><span class="form-progress-label">Step 1 of 4</span></div>
       </div>
-      <form class="signup-form-body" onsubmit="handleSignup(event, 'young')">
+      <form class="signup-form-body" name="young-athlete-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSignup(event, 'young')">
+        <input type="hidden" name="form-name" value="young-athlete-signup" />
+        <p hidden><label>Leave blank <input name="bot-field" /></label></p>
         <div class="field-section">
           <div class="field-section-title">Athlete Info</div>
           <div class="field-section-desc">The basics. We'll use this on your profile and for verification.</div>
           <div class="form-grid">
-            <div class="field"><label>First Name</label><input type="text" required /></div>
-            <div class="field"><label>Last Name</label><input type="text" required /></div>
-            <div class="field field-full"><label>Email</label><input type="email" required /></div>
-            <div class="field"><label>Date of Birth</label><input type="date" required /></div>
+            <div class="field"><label>First Name</label><input name="first-name" type="text" required /></div>
+            <div class="field"><label>Last Name</label><input name="last-name" type="text" required /></div>
+            <div class="field field-full"><label>Email</label><input name="email" type="email" required /></div>
+            <div class="field"><label>Date of Birth</label><input name="date-of-birth" type="date" required /></div>
             <div class="field">
               <label>Graduation Year</label>
-              <select required>
+              <select name="graduation-year" required>
                 <option value="">Select year</option>
                 <option>2026</option><option>2027</option><option>2028</option>
                 <option>2029</option><option>2030</option><option>2031</option><option>2032</option>
               </select>
             </div>
-            <div class="field"><label>High School / College</label><input type="text" required placeholder="e.g. Lincoln HS" /></div>
+            <div class="field"><label>High School / College</label><input name="high-school-college" type="text" required placeholder="e.g. Lincoln HS" /></div>
             <div class="field">
               <label>Position</label>
-              <select required>
+              <select name="position" required>
                 <option value="">Select position</option>
                 <option>Point Guard</option><option>Shooting Guard</option>
                 <option>Small Forward</option><option>Power Forward</option><option>Center</option>
               </select>
             </div>
-            <div class="field"><label>Height <span class="opt">Optional</span></label><input type="text" placeholder='6&apos; 2"' /></div>
-            <div class="field"><label>Weight (lbs) <span class="opt">Optional</span></label><input type="number" placeholder="185" /></div>
-            <div class="field field-full"><label>City, State <span class="opt">Optional</span></label><input type="text" placeholder="Brooklyn, NY" /></div>
+            <div class="field"><label>Height <span class="opt">Optional</span></label><input name="height" type="text" placeholder='6&apos; 2"' /></div>
+            <div class="field"><label>Weight (lbs) <span class="opt">Optional</span></label><input name="weight-lbs" type="number" placeholder="185" /></div>
+            <div class="field field-full"><label>City, State <span class="opt">Optional</span></label><input name="city-state" type="text" placeholder="Brooklyn, NY" /></div>
           </div>
         </div>
 
@@ -151,15 +153,14 @@
           <div class="field-section-title">Parent / Guardian (Under 18)</div>
           <div class="field-section-desc">Required for minors. Your parent or guardian will be emailed to confirm consent.</div>
           <div class="form-grid">
-            <div class="field"><label>Parent/Guardian Name <span class="opt">Optional</span></label><input type="text" /></div>
-            <div class="field"><label>Parent/Guardian Email <span class="opt">Optional</span></label><input type="email" /></div>
+            <div class="field"><label>Parent/Guardian Name <span class="opt">Optional</span></label><input name="parent-guardian-name" type="text" /></div>
+            <div class="field"><label>Parent/Guardian Email <span class="opt">Optional</span></label><input name="parent-guardian-email" type="email" /></div>
           </div>
         </div>
 
         <div class="verification-block">
           <div class="ver-title">Athlete Verification</div>
           <p>We confirm every young athlete to keep this community safe. After signup we'll request: (1) a school enrollment confirmation, (2) a coach/AD email to verify roster status, and (3) photos of you in jersey for film tool calibration.</p>
-          <div style="font-size:0.8rem; color:var(--gray-500);">Verification options under consideration: Persona, Stripe Identity, manual review. Final method confirmed before launch.</div>
         </div>
 
         <div class="form-actions">
@@ -179,29 +180,31 @@
         <h2>Professional profile</h2>
         <div class="form-progress"><div class="form-progress-bar" aria-hidden="true"><span class="on"></span><span></span><span></span></div><span class="form-progress-label">Step 1 of 3</span></div>
       </div>
-      <form class="signup-form-body" onsubmit="handleSignup(event, 'pro')">
+      <form class="signup-form-body" name="pro-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSignup(event, 'pro')">
+        <input type="hidden" name="form-name" value="pro-signup" />
+        <p hidden><label>Leave blank <input name="bot-field" /></label></p>
         <div class="field-section">
           <div class="field-section-title">Pro Type</div>
           <div class="form-grid">
-            <div class="field field-full"><span class="field-label">I am a</span><div class="choice-grid"><label class="choice-tile"><input type="radio" name="proType" required /><span class="choice-title">Active pro athlete</span><span class="choice-sub">Currently on a pro roster</span></label><label class="choice-tile"><input type="radio" name="proType" required /><span class="choice-title">Retired pro athlete</span><span class="choice-sub">Played professionally</span></label><label class="choice-tile"><input type="radio" name="proType" required /><span class="choice-title">Pro coach</span><span class="choice-sub">Currently coaching at the pro level</span></label><label class="choice-tile"><input type="radio" name="proType" required /><span class="choice-title">Former pro coach</span><span class="choice-sub">Coached at the pro level</span></label></div></div>
+            <div class="field field-full"><span class="field-label">I am a</span><div class="choice-grid"><label class="choice-tile"><input type="radio" name="pro-type" value="Active pro athlete" required /><span class="choice-title">Active pro athlete</span><span class="choice-sub">Currently on a pro roster</span></label><label class="choice-tile"><input type="radio" name="pro-type" value="Retired pro athlete" required /><span class="choice-title">Retired pro athlete</span><span class="choice-sub">Played professionally</span></label><label class="choice-tile"><input type="radio" name="pro-type" value="Pro coach" required /><span class="choice-title">Pro coach</span><span class="choice-sub">Currently coaching at the pro level</span></label><label class="choice-tile"><input type="radio" name="pro-type" value="Former pro coach" required /><span class="choice-title">Former pro coach</span><span class="choice-sub">Coached at the pro level</span></label></div></div>
             <div class="field"><label>Sport</label>
-              <select required>
+              <select name="sport" required>
                 <option>Basketball</option>
                 <option disabled>Football (coming soon)</option>
                 <option disabled>Baseball (coming soon)</option>
                 <option disabled>Soccer (coming soon)</option>
               </select>
             </div>
-            <div class="field"><label>Position / Role <span class="opt">Optional</span></label><input type="text" placeholder="e.g. Point Guard, Head Coach" /></div>
+            <div class="field"><label>Position / Role <span class="opt">Optional</span></label><input name="position-role" type="text" placeholder="e.g. Point Guard, Head Coach" /></div>
           </div>
         </div>
 
         <div class="field-section">
           <div class="field-section-title">Identity</div>
           <div class="form-grid">
-            <div class="field"><label>First Name</label><input type="text" required /></div>
-            <div class="field"><label>Last Name</label><input type="text" required /></div>
-            <div class="field field-full"><label>Email</label><input type="email" required /></div>
+            <div class="field"><label>First Name</label><input name="first-name" type="text" required /></div>
+            <div class="field"><label>Last Name</label><input name="last-name" type="text" required /></div>
+            <div class="field field-full"><label>Email</label><input name="email" type="email" required /></div>
             <div class="field"><label>Password</label><input type="password" required minlength="8" /></div>
             <div class="field"><label>Confirm Password</label><input type="password" required minlength="8" /></div>
           </div>
@@ -210,10 +213,10 @@
         <div class="field-section">
           <div class="field-section-title">Pro Background</div>
           <div class="form-grid">
-            <div class="field field-full"><label>Teams / Years Active</label><input type="text" required placeholder='e.g. "Brooklyn Nets 2018-2022, EuroLeague 2022-2024"' /></div>
-            <div class="field field-full"><label>Notable Accomplishments <span class="opt">Optional</span></label><textarea rows="3" placeholder="Championships, awards, milestones..."></textarea></div>
-            <div class="field"><label>LinkedIn URL <span class="opt">Optional</span></label><input type="url" placeholder="https://linkedin.com/in/..." /></div>
-            <div class="field"><label>Verified Social (X/Instagram) <span class="opt">Optional</span></label><input type="text" placeholder="@yourhandle" /></div>
+            <div class="field field-full"><label>Teams / Years Active</label><input name="teams-years-active" type="text" required placeholder='e.g. "Brooklyn Nets 2018-2022, EuroLeague 2022-2024"' /></div>
+            <div class="field field-full"><label>Notable Accomplishments <span class="opt">Optional</span></label><textarea name="notable-accomplishments" rows="3" placeholder="Championships, awards, milestones..."></textarea></div>
+            <div class="field"><label>LinkedIn URL <span class="opt">Optional</span></label><input name="linkedin-url" type="url" placeholder="https://linkedin.com/in/..." /></div>
+            <div class="field"><label>Verified Social (X/Instagram) <span class="opt">Optional</span></label><input name="verified-social-x-instagram" type="text" placeholder="@yourhandle" /></div>
           </div>
         </div>
 
@@ -239,14 +242,16 @@
         <h2>Fan account</h2>
         <div class="form-progress"><span class="form-progress-label">Takes about a minute</span></div>
       </div>
-      <form class="signup-form-body" onsubmit="handleSignup(event, 'fan')">
+      <form class="signup-form-body" name="fan-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSignup(event, 'fan')">
+        <input type="hidden" name="form-name" value="fan-signup" />
+        <p hidden><label>Leave blank <input name="bot-field" /></label></p>
         <div class="field-section">
           <div class="form-grid">
-            <div class="field"><label>First Name</label><input type="text" required /></div>
-            <div class="field"><label>Last Name</label><input type="text" required /></div>
-            <div class="field field-full"><label>Email</label><input type="email" required /></div>
-            <div class="field"><label>Date of Birth</label><input type="date" required /></div>
-            <div class="field"><label>Country <span class="opt">Optional</span></label><input type="text" /></div>
+            <div class="field"><label>First Name</label><input name="first-name" type="text" required /></div>
+            <div class="field"><label>Last Name</label><input name="last-name" type="text" required /></div>
+            <div class="field field-full"><label>Email</label><input name="email" type="email" required /></div>
+            <div class="field"><label>Date of Birth</label><input name="date-of-birth" type="date" required /></div>
+            <div class="field"><label>Country <span class="opt">Optional</span></label><input name="country" type="text" /></div>
             <div class="field"><label>Password</label><input type="password" required minlength="8" /></div>
             <div class="field"><label>Confirm Password</label><input type="password" required minlength="8" /></div>
           </div>
@@ -257,7 +262,7 @@
           <div class="field-section-desc">Tell us who you want to follow and what you'd ask a pro.</div>
           <div class="form-grid">
             <div class="field"><label>Who you want to follow <span class="opt">Optional</span></label>
-              <select>
+              <select name="who-you-want-to-follow">
                 <option>High school players</option>
                 <option>College players</option>
                 <option>Active pros</option>
@@ -265,8 +270,8 @@
                 <option>All of the above</option>
               </select>
             </div>
-            <div class="field"><label>Region <span class="opt">Optional</span></label><input type="text" placeholder="e.g. Northeast US" /></div>
-            <div class="field field-full"><label>A question you'd ask a pro <span class="opt">Optional</span></label><textarea rows="3" placeholder="e.g. What did your routine look like the night before a big game?"></textarea></div>
+            <div class="field"><label>Region <span class="opt">Optional</span></label><input name="region" type="text" placeholder="e.g. Northeast US" /></div>
+            <div class="field field-full"><label>A question you'd ask a pro <span class="opt">Optional</span></label><textarea name="a-question-you-d-ask-a-pro" rows="3" placeholder="e.g. What did your routine look like the night before a big game?"></textarea></div>
           </div>
         </div>
 
@@ -296,7 +301,6 @@
         <h4>Account</h4>
         <ul>
           <li><a href="signup.html">Sign up</a></li>
-          <li><a href="index.html">Sign in</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -344,7 +348,16 @@ function backToTypes() {
 }
 function handleSignup(e, t) {
   e.preventDefault();
-  showNotice("Prototype: account creation isn't connected yet.");
+  const form = e.target;
+  const pw = form.querySelectorAll('input[type=password]');
+  if (pw.length === 2 && pw[0].value !== pw[1].value) {
+    showNotice("Your passwords don't match.");
+    return;
+  }
+  submitForm(form).then(ok => {
+    if (ok) { form.reset(); showNotice("You're in. We'll email you when your account is ready."); }
+    else showNotice("That didn't go through. Please try again in a minute.");
+  });
 }
 </script>
 </body>

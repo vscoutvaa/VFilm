@@ -44,8 +44,10 @@ function closeFeedback() {
 }
 function handleFeedback(e) {
   e.preventDefault();
-  closeFeedback();
-  showNotice("Thanks. Feedback noted (front-end only for now).");
+  submitForm(e.target).then(ok => {
+    if (ok) { closeFeedback(); e.target.reset(); showNotice("Thanks. Your feedback was sent."); }
+    else showNotice("That didn't go through. Please try again in a minute.");
+  });
 }
 
 /* ---------- AI MATCH BUTTON GATE ---------- */
@@ -57,8 +59,12 @@ function handleAiMatch() {
 function handleWaitlist(e) {
   e.preventDefault();
   const msg = document.getElementById('waitlistMsg');
-  if (msg) msg.textContent = "You're on the list. We'll be in touch when verification opens.";
-  e.target.reset();
+  submitForm(e.target).then(ok => {
+    if (msg) msg.textContent = ok
+      ? "You're on the list. We'll be in touch when verification opens."
+      : "That didn't go through. Please try again in a minute.";
+    if (ok) e.target.reset();
+  });
 }
 
 /* ---------- SCROLL HELPERS ---------- */
@@ -138,3 +144,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel('proTrack');
   initVoting();
 });
+
+/* ---------- FORM SUBMIT (Netlify Forms) ---------- */
+/* Sends a form to Netlify. Password fields have no name, so they are never sent. */
+function submitForm(form) {
+  const data = new URLSearchParams(new FormData(form)).toString();
+  return fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: data
+  }).then(r => r.ok).catch(() => false);
+}

@@ -23,10 +23,6 @@
       <a href="dashboard.html" class="nav-link hide-mobile">Dashboard</a>
       <a href="#feedback" class="nav-link hide-mobile" onclick="openFeedback(event)">Feedback</a>
       <a href="#subscribe" class="nav-link hide-mobile" onclick="scrollToWaitlist(event)">Subscribe</a>
-      <button class="nav-icon-btn nav-icon-wrap" title="Notifications" onclick="showNotice('Sign in to view notifications')">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-        <span class="badge">3</span>
-      </button>
       <button class="btn btn-outline-gold" onclick="openLogin()">Sign in</button>
     </div>
   </div>
@@ -73,7 +69,7 @@
         Find my mentor match
       </button>
       <div class="lock-msg">
-        Available to verified athletes only. <a href="signup.html">Create an account</a> or <a href="#" onclick="openLogin(); return false;">sign in</a> to unlock.
+        Available to verified athletes. <a href="signup.html">Create an account</a> to get started.
       </div>
     </div>
   </div>
@@ -230,7 +226,7 @@
       </div>
     </div>
     <div style="text-align:center; margin-top:36px;">
-      <a href="#" class="btn btn-navy" onclick="showNotice('Sign in to ask a question'); return false;">Ask a question</a>
+      <a href="#" class="btn btn-navy" onclick="showNotice('Questions open with the founding beta. Join the waitlist below.'); return false;">Ask a question</a>
     </div>
   </div>
 </section>
@@ -308,8 +304,9 @@
       <h2>Be first on the floor.</h2>
       <p>VFilm is rolling out to basketball players first. Leave your email and we'll let you know when verification opens in your region.</p>
     </div>
-    <form class="waitlist-form" onsubmit="handleWaitlist(event)" style="max-width:520px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;">
-      <input type="email" placeholder="your@email.com" required style="flex:1;min-width:240px;min-height:54px;padding:14px 18px;border:1px solid var(--gray-200);border-radius:12px;font-family:inherit;font-size:1rem;background:var(--white);" />
+    <form class="waitlist-form" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleWaitlist(event)" style="max-width:520px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;">
+      <input type="hidden" name="form-name" value="waitlist" /><p hidden><label>Leave blank <input name="bot-field" /></label></p>
+      <input type="email" name="email" placeholder="your@email.com" required style="flex:1;min-width:240px;min-height:54px;padding:14px 18px;border:1px solid var(--gray-200);border-radius:12px;font-family:inherit;font-size:1rem;background:var(--white);" />
       <button type="submit" class="btn btn-gold btn-lg">Join waitlist</button>
       <div id="waitlistMsg" style="width:100%;font-size:0.88rem;color:var(--gold-500);font-weight:600;"></div>
     </form>
@@ -392,14 +389,15 @@
       <h3>Send feedback</h3>
       <button class="modal-close" onclick="closeFeedback()" aria-label="Close">✕</button>
     </div>
-    <form class="modal-body" onsubmit="handleFeedback(event)">
+    <form class="modal-body" name="feedback" method="POST" data-netlify="true" onsubmit="handleFeedback(event)">
+      <input type="hidden" name="form-name" value="feedback" />
       <div class="field">
         <label>What's on your mind?</label>
-        <textarea rows="5" required placeholder="Tell us what's working, what isn't, or what you'd love to see."></textarea>
+        <textarea name="message" rows="5" required placeholder="Tell us what's working, what isn't, or what you'd love to see."></textarea>
       </div>
       <div class="field">
         <label>Your Email (optional)</label>
-        <input type="email" placeholder="your@email.com" />
+        <input type="email" name="email" placeholder="your@email.com" />
       </div>
       <button type="submit" class="btn btn-gold btn-block">Send feedback</button>
     </form>
