@@ -1008,3 +1008,168 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spac
 
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   SIGNUP FORMS (modern dark "film room" treatment)
+   ========================================================= */
+.signup-stage { background: var(--navy-900); padding-top: 72px; }
+.signup-stage .signup-form-wrap {
+  max-width: 680px;
+  margin-top: 0;
+  background: var(--navy-800);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+}
+.signup-stage .signup-form-header {
+  background: none;
+  border-bottom: none;
+  padding: 36px 40px 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.signup-stage .signup-form-header h2 {
+  text-transform: none;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--white);
+}
+.form-progress { display: flex; align-items: center; gap: 12px; width: 100%; }
+.form-progress-bar { display: flex; gap: 6px; flex: 1; max-width: 220px; }
+.form-progress-bar span {
+  height: 4px; flex: 1; border-radius: 4px;
+  background: rgba(255,255,255,0.12);
+}
+.form-progress-bar span.on { background: var(--gold-500); }
+.form-progress-label { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+
+.signup-stage .signup-form-body { padding: 24px 40px 40px; }
+.signup-stage .field-section,
+.signup-stage .field-section:first-of-type {
+  border-top: none;
+  margin-top: 36px;
+  padding-top: 0;
+}
+.signup-stage .field-section:first-of-type { margin-top: 8px; }
+.signup-stage .field-section-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+.signup-stage .field-section-desc { color: rgba(255,255,255,0.55); }
+.field-section-title + .form-grid { margin-top: 16px; }
+.signup-stage .form-grid { gap: 20px 16px; }
+
+.signup-stage .field { display: flex; flex-direction: column; }
+.signup-stage label,
+.signup-stage .field-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 8px;
+}
+.signup-stage .opt { color: rgba(255,255,255,0.4); font-weight: 400; margin-left: 4px; }
+
+.signup-stage input:not([type=radio]),
+.signup-stage select,
+.signup-stage textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 16px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--white);
+  background: var(--navy-700);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  color-scheme: dark;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.signup-stage select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 42px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23D4A02A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+.signup-stage select option { background: var(--navy-800); color: var(--white); }
+.signup-stage textarea { resize: vertical; min-height: 110px; }
+.signup-stage input::placeholder,
+.signup-stage textarea::placeholder { color: rgba(255,255,255,0.35); }
+.signup-stage input:not([type=radio]):hover,
+.signup-stage select:hover,
+.signup-stage textarea:hover { border-color: rgba(255,255,255,0.16); }
+.signup-stage input:not([type=radio]):focus,
+.signup-stage select:focus,
+.signup-stage textarea:focus {
+  outline: none;
+  background: var(--navy-600);
+  border-color: var(--gold-500);
+  box-shadow: 0 0 0 4px rgba(212,160,42,0.18);
+}
+
+/* Pro type tiles */
+.choice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.choice-tile {
+  position: relative;
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 16px 18px;
+  margin: 0 !important;
+  background: var(--navy-700);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.choice-tile:hover { border-color: rgba(255,255,255,0.18); }
+.choice-tile input { position: absolute; opacity: 0; pointer-events: none; }
+.choice-title { font-size: 1rem; font-weight: 600; color: var(--white); }
+.choice-sub { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+.choice-tile:has(input:checked) {
+  border-color: var(--gold-500);
+  background: rgba(212,160,42,0.1);
+}
+.choice-tile:has(input:checked) .choice-title { color: var(--gold-400); }
+.choice-tile:has(input:focus-visible) { box-shadow: 0 0 0 4px rgba(212,160,42,0.25); }
+
+/* Verification note */
+.signup-stage .verification-block {
+  margin-top: 36px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+.signup-stage .verification-block .ver-title { color: var(--white); }
+.signup-stage .verification-block .ver-title::before { content: none; }
+.signup-stage .verification-block p,
+.signup-stage .verification-block div:not(.ver-title) { color: rgba(255,255,255,0.6) !important; }
+
+/* Actions */
+.form-actions { margin-top: 32px; display: flex; gap: 12px; }
+.signup-stage .btn { border-radius: 12px; min-height: 52px; padding: 14px 24px; }
+.btn-ghost {
+  background: transparent;
+  color: rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
+.btn-submit { flex: 1; font-size: 1rem; }
+
+@media (max-width: 600px) {
+  .signup-stage { padding-top: 40px; }
+  .signup-stage .signup-form-header { padding: 28px 22px 4px; }
+  .signup-stage .signup-form-header h2 { font-size: 1.6rem; }
+  .signup-stage .signup-form-body { padding: 20px 22px 28px; }
+  .choice-grid { grid-template-columns: 1fr; }
+  .form-actions { flex-direction: column-reverse; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signup-stage * { transition: none !important; }
+}

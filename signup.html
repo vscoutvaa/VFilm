@@ -100,50 +100,50 @@
 </section>
 
 <!-- ===== YOUNG ATHLETE FORM ===== -->
-<section class="section" id="form-young" style="display:none;background:var(--gray-50);">
+<section class="section signup-stage" id="form-young" style="display:none;">
   <div class="container">
     <div class="signup-form-wrap">
       <div class="signup-form-header">
-        <h2>Young Athlete Profile</h2>
-        <span class="role-badge">Step 1 of 4</span>
+        <h2>Young athlete profile</h2>
+        <div class="form-progress"><div class="form-progress-bar" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div><span class="form-progress-label">Step 1 of 4</span></div>
       </div>
       <form class="signup-form-body" onsubmit="handleSignup(event, 'young')">
         <div class="field-section">
           <div class="field-section-title">Athlete Info</div>
           <div class="field-section-desc">The basics. We'll use this on your profile and for verification.</div>
           <div class="form-grid">
-            <div class="field"><label>First Name *</label><input type="text" required /></div>
-            <div class="field"><label>Last Name *</label><input type="text" required /></div>
-            <div class="field field-full"><label>Email *</label><input type="email" required /></div>
-            <div class="field"><label>Date of Birth *</label><input type="date" required /></div>
+            <div class="field"><label>First Name</label><input type="text" required /></div>
+            <div class="field"><label>Last Name</label><input type="text" required /></div>
+            <div class="field field-full"><label>Email</label><input type="email" required /></div>
+            <div class="field"><label>Date of Birth</label><input type="date" required /></div>
             <div class="field">
-              <label>Graduation Year *</label>
+              <label>Graduation Year</label>
               <select required>
                 <option value="">Select year</option>
                 <option>2026</option><option>2027</option><option>2028</option>
                 <option>2029</option><option>2030</option><option>2031</option><option>2032</option>
               </select>
             </div>
-            <div class="field"><label>High School / College *</label><input type="text" required placeholder="e.g. Lincoln HS" /></div>
+            <div class="field"><label>High School / College</label><input type="text" required placeholder="e.g. Lincoln HS" /></div>
             <div class="field">
-              <label>Position *</label>
+              <label>Position</label>
               <select required>
                 <option value="">Select position</option>
                 <option>Point Guard</option><option>Shooting Guard</option>
                 <option>Small Forward</option><option>Power Forward</option><option>Center</option>
               </select>
             </div>
-            <div class="field"><label>Height</label><input type="text" placeholder='6&apos; 2"' /></div>
-            <div class="field"><label>Weight (lbs)</label><input type="number" placeholder="185" /></div>
-            <div class="field field-full"><label>City, State</label><input type="text" placeholder="Brooklyn, NY" /></div>
+            <div class="field"><label>Height <span class="opt">Optional</span></label><input type="text" placeholder='6&apos; 2"' /></div>
+            <div class="field"><label>Weight (lbs) <span class="opt">Optional</span></label><input type="number" placeholder="185" /></div>
+            <div class="field field-full"><label>City, State <span class="opt">Optional</span></label><input type="text" placeholder="Brooklyn, NY" /></div>
           </div>
         </div>
 
         <div class="field-section">
           <div class="field-section-title">Account</div>
           <div class="form-grid">
-            <div class="field"><label>Password *</label><input type="password" required minlength="8" /></div>
-            <div class="field"><label>Confirm Password *</label><input type="password" required minlength="8" /></div>
+            <div class="field"><label>Password</label><input type="password" required minlength="8" /></div>
+            <div class="field"><label>Confirm Password</label><input type="password" required minlength="8" /></div>
           </div>
         </div>
 
@@ -151,8 +151,8 @@
           <div class="field-section-title">Parent / Guardian (Under 18)</div>
           <div class="field-section-desc">Required for minors. Your parent or guardian will be emailed to confirm consent.</div>
           <div class="form-grid">
-            <div class="field"><label>Parent/Guardian Name</label><input type="text" /></div>
-            <div class="field"><label>Parent/Guardian Email</label><input type="email" /></div>
+            <div class="field"><label>Parent/Guardian Name <span class="opt">Optional</span></label><input type="text" /></div>
+            <div class="field"><label>Parent/Guardian Email <span class="opt">Optional</span></label><input type="email" /></div>
           </div>
         </div>
 
@@ -162,9 +162,9 @@
           <div style="font-size:0.8rem; color:var(--gray-500);">Verification options under consideration: Persona, Stripe Identity, manual review. Final method confirmed before launch.</div>
         </div>
 
-        <div style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
-          <button type="button" class="btn btn-outline-gold" onclick="backToTypes()">← Back</button>
-          <button type="submit" class="btn btn-gold" style="flex:1;">Create Profile &amp; Continue →</button>
+        <div class="form-actions">
+          <button type="button" class="btn btn-ghost" onclick="backToTypes()">Back</button>
+          <button type="submit" class="btn btn-gold btn-submit">Create profile and continue</button>
         </div>
       </form>
     </div>
@@ -172,28 +172,19 @@
 </section>
 
 <!-- ===== PROFESSIONAL FORM ===== -->
-<section class="section" id="form-pro" style="display:none;background:var(--gray-50);">
+<section class="section signup-stage" id="form-pro" style="display:none;">
   <div class="container">
     <div class="signup-form-wrap">
       <div class="signup-form-header">
-        <h2>Professional Profile</h2>
-        <span class="role-badge">Step 1 of 3</span>
+        <h2>Professional profile</h2>
+        <div class="form-progress"><div class="form-progress-bar" aria-hidden="true"><span class="on"></span><span></span><span></span></div><span class="form-progress-label">Step 1 of 3</span></div>
       </div>
       <form class="signup-form-body" onsubmit="handleSignup(event, 'pro')">
         <div class="field-section">
           <div class="field-section-title">Pro Type</div>
           <div class="form-grid">
-            <div class="field field-full">
-              <label>I am a *</label>
-              <select required>
-                <option value="">Select your status</option>
-                <option>Active Professional Athlete</option>
-                <option>Retired Professional Athlete</option>
-                <option>Professional Coach (current)</option>
-                <option>Professional Coach (former)</option>
-              </select>
-            </div>
-            <div class="field"><label>Sport *</label>
+            <div class="field field-full"><span class="field-label">I am a</span><div class="choice-grid"><label class="choice-tile"><input type="radio" name="proType" required /><span class="choice-title">Active pro athlete</span><span class="choice-sub">Currently on a pro roster</span></label><label class="choice-tile"><input type="radio" name="proType" required /><span class="choice-title">Retired pro athlete</span><span class="choice-sub">Played professionally</span></label><label class="choice-tile"><input type="radio" name="proType" required /><span class="choice-title">Pro coach</span><span class="choice-sub">Currently coaching at the pro level</span></label><label class="choice-tile"><input type="radio" name="proType" required /><span class="choice-title">Former pro coach</span><span class="choice-sub">Coached at the pro level</span></label></div></div>
+            <div class="field"><label>Sport</label>
               <select required>
                 <option>Basketball</option>
                 <option disabled>Football (coming soon)</option>
@@ -201,28 +192,28 @@
                 <option disabled>Soccer (coming soon)</option>
               </select>
             </div>
-            <div class="field"><label>Position / Role</label><input type="text" placeholder="e.g. Point Guard, Head Coach" /></div>
+            <div class="field"><label>Position / Role <span class="opt">Optional</span></label><input type="text" placeholder="e.g. Point Guard, Head Coach" /></div>
           </div>
         </div>
 
         <div class="field-section">
           <div class="field-section-title">Identity</div>
           <div class="form-grid">
-            <div class="field"><label>First Name *</label><input type="text" required /></div>
-            <div class="field"><label>Last Name *</label><input type="text" required /></div>
-            <div class="field field-full"><label>Email *</label><input type="email" required /></div>
-            <div class="field"><label>Password *</label><input type="password" required minlength="8" /></div>
-            <div class="field"><label>Confirm Password *</label><input type="password" required minlength="8" /></div>
+            <div class="field"><label>First Name</label><input type="text" required /></div>
+            <div class="field"><label>Last Name</label><input type="text" required /></div>
+            <div class="field field-full"><label>Email</label><input type="email" required /></div>
+            <div class="field"><label>Password</label><input type="password" required minlength="8" /></div>
+            <div class="field"><label>Confirm Password</label><input type="password" required minlength="8" /></div>
           </div>
         </div>
 
         <div class="field-section">
           <div class="field-section-title">Pro Background</div>
           <div class="form-grid">
-            <div class="field field-full"><label>Teams / Years Active *</label><input type="text" required placeholder='e.g. "Brooklyn Nets 2018-2022, EuroLeague 2022-2024"' /></div>
-            <div class="field field-full"><label>Notable Accomplishments</label><textarea rows="3" placeholder="Championships, awards, milestones..."></textarea></div>
-            <div class="field"><label>LinkedIn URL</label><input type="url" placeholder="https://linkedin.com/in/..." /></div>
-            <div class="field"><label>Verified Social (X/Instagram)</label><input type="text" placeholder="@yourhandle" /></div>
+            <div class="field field-full"><label>Teams / Years Active</label><input type="text" required placeholder='e.g. "Brooklyn Nets 2018-2022, EuroLeague 2022-2024"' /></div>
+            <div class="field field-full"><label>Notable Accomplishments <span class="opt">Optional</span></label><textarea rows="3" placeholder="Championships, awards, milestones..."></textarea></div>
+            <div class="field"><label>LinkedIn URL <span class="opt">Optional</span></label><input type="url" placeholder="https://linkedin.com/in/..." /></div>
+            <div class="field"><label>Verified Social (X/Instagram) <span class="opt">Optional</span></label><input type="text" placeholder="@yourhandle" /></div>
           </div>
         </div>
 
@@ -231,9 +222,9 @@
           <p>To protect young athletes, every pro account is verified before being public. After signup we'll request: (1) government ID, (2) team/league confirmation, (3) cross-link to a verified social account (active pros). For coaches: program affiliation letter.</p>
         </div>
 
-        <div style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
-          <button type="button" class="btn btn-outline-gold" onclick="backToTypes()">← Back</button>
-          <button type="submit" class="btn btn-gold" style="flex:1;">Submit for Verification →</button>
+        <div class="form-actions">
+          <button type="button" class="btn btn-ghost" onclick="backToTypes()">Back</button>
+          <button type="submit" class="btn btn-gold btn-submit">Submit for verification</button>
         </div>
       </form>
     </div>
@@ -241,23 +232,23 @@
 </section>
 
 <!-- ===== FAN FORM ===== -->
-<section class="section" id="form-fan" style="display:none;background:var(--gray-50);">
+<section class="section signup-stage" id="form-fan" style="display:none;">
   <div class="container">
     <div class="signup-form-wrap">
       <div class="signup-form-header">
-        <h2>Fan Account</h2>
-        <span class="role-badge">Quick Setup</span>
+        <h2>Fan account</h2>
+        <div class="form-progress"><span class="form-progress-label">Takes about a minute</span></div>
       </div>
       <form class="signup-form-body" onsubmit="handleSignup(event, 'fan')">
         <div class="field-section">
           <div class="form-grid">
-            <div class="field"><label>First Name *</label><input type="text" required /></div>
-            <div class="field"><label>Last Name *</label><input type="text" required /></div>
-            <div class="field field-full"><label>Email *</label><input type="email" required /></div>
-            <div class="field"><label>Date of Birth *</label><input type="date" required /></div>
-            <div class="field"><label>Country</label><input type="text" /></div>
-            <div class="field"><label>Password *</label><input type="password" required minlength="8" /></div>
-            <div class="field"><label>Confirm Password *</label><input type="password" required minlength="8" /></div>
+            <div class="field"><label>First Name</label><input type="text" required /></div>
+            <div class="field"><label>Last Name</label><input type="text" required /></div>
+            <div class="field field-full"><label>Email</label><input type="email" required /></div>
+            <div class="field"><label>Date of Birth</label><input type="date" required /></div>
+            <div class="field"><label>Country <span class="opt">Optional</span></label><input type="text" /></div>
+            <div class="field"><label>Password</label><input type="password" required minlength="8" /></div>
+            <div class="field"><label>Confirm Password</label><input type="password" required minlength="8" /></div>
           </div>
         </div>
 
@@ -265,7 +256,7 @@
           <div class="field-section-title">Interests (Optional)</div>
           <div class="field-section-desc">Tell us who you'd love to follow.</div>
           <div class="form-grid">
-            <div class="field"><label>Favorite Athlete Type</label>
+            <div class="field"><label>Favorite Athlete Type <span class="opt">Optional</span></label>
               <select>
                 <option>High School Players</option>
                 <option>College Players</option>
@@ -274,7 +265,7 @@
                 <option>All of the above</option>
               </select>
             </div>
-            <div class="field"><label>Region</label><input type="text" placeholder="e.g. Northeast US" /></div>
+            <div class="field"><label>Region <span class="opt">Optional</span></label><input type="text" placeholder="e.g. Northeast US" /></div>
           </div>
         </div>
 
@@ -283,9 +274,9 @@
           <p>Just confirm your email — we'll send a verification link. You must be 13 or older. Fans can follow, like, and bookmark; only verified athletes can post.</p>
         </div>
 
-        <div style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
-          <button type="button" class="btn btn-outline-gold" onclick="backToTypes()">← Back</button>
-          <button type="submit" class="btn btn-gold" style="flex:1;">Create Account →</button>
+        <div class="form-actions">
+          <button type="button" class="btn btn-ghost" onclick="backToTypes()">Back</button>
+          <button type="submit" class="btn btn-gold btn-submit">Create account</button>
         </div>
       </form>
     </div>
