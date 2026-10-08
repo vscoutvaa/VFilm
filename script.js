@@ -1,5 +1,5 @@
 /* ====================================================
-   VFilm — Prototype JS
+   VFilm: Prototype JS
    Login modal, carousels, vote system, waitlist, toast
    ==================================================== */
 
@@ -45,7 +45,7 @@ function closeFeedback() {
 function handleFeedback(e) {
   e.preventDefault();
   closeFeedback();
-  showNotice("Thanks — feedback noted (front-end only for now).");
+  showNotice("Thanks. Feedback noted (front-end only for now).");
 }
 
 /* ---------- AI MATCH BUTTON GATE ---------- */
@@ -57,7 +57,7 @@ function handleAiMatch() {
 function handleWaitlist(e) {
   e.preventDefault();
   const msg = document.getElementById('waitlistMsg');
-  if (msg) msg.textContent = "✓ You're on the list — we'll be in touch when verification opens.";
+  if (msg) msg.textContent = "You're on the list. We'll be in touch when verification opens.";
   e.target.reset();
 }
 
