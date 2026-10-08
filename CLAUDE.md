@@ -14,13 +14,13 @@
 
 **Sport at launch:** basketball only. Football, baseball, soccer are scaffolded in the backend data model with a `sport` field but gated off in the UI until rollout.
 
-**Founder:** Jeffrey Nuez (jeffreynuez1@gmail.com).
+**Founder:** Isaiah Crawford.
 
 ## Current Phase
 
 **Phase 1 — Marketing-site prototype.** All pages are static HTML/CSS/JS — no backend, no auth, no database. Forms collect input but don't submit anywhere real. The "real" build (Next.js + Supabase + Claude API) starts in Phase 2.
 
-## Build Phases (Agreed With Jeffrey)
+## Build Phases
 
 | Phase | Deliverable | Status |
 |---|---|---|
@@ -46,7 +46,7 @@ index.html       Home page: nav, hero+stats, AI match CTA (locked), young athlet
                  success carousel, popular Q&A with voting, pro athlete carousel,
                  waitlist signup, footer. Login + feedback modals included.
 
-about.html       About page: placeholder for Jeffrey's founder story, Vanguard
+about.html       About page: founder story (Isaiah), Vanguard
                  Legacy values, 4-step "How It Works" flow.
 
 signup.html      Three-card account type selector (young / pro / fan) that opens
@@ -82,7 +82,7 @@ script.js       Vanilla JS — no framework. Handles modal open/close,
 - **Color tokens come from CSS variables** in `:root`. Don't hardcode hex values inside components.
 - **All copy uses the Vanguard Legacy voice:** direct, honest, anti-hype. "Know where you stand." "Path > Spotlight." Don't soften the message.
 
-## What Should NOT Be Done Without Asking Jeffrey First
+## What Should NOT Be Done Without Asking Isaiah First
 
 - Adding analytics, tracking pixels, or third-party scripts.
 - Changing the color palette or fonts.
@@ -93,14 +93,14 @@ script.js       Vanilla JS — no framework. Handles modal open/close,
 
 ## Open Items for Future Sessions
 
-- **Jeffrey's founder story** — currently a placeholder in `about.html`. Work this up with him.
-- **Stat numbers on the hero** — currently placeholder figures (2,184 young athletes, etc.). Replace with real numbers at launch.
+- **Founder story** — short version is live in `about.html`. Expand with Isaiah's full story.
+- **Hero stats** — currently feature/status callouts, not user counts. Only show real numbers once they exist.
 - **Verification vendor lock-in** — Persona vs Stripe Identity vs manual review.
-- **Repo ownership** — Jeffrey is a collaborator on `vscoutvaa/VFilm`, not the owner. Branch + PR workflow required.
+- **Repo ownership** — `vscoutvaa` (Isaiah) owns the repo. Collaborators use the branch + PR workflow.
 
 ## Repository
 
 - **GitHub:** https://github.com/vscoutvaa/VFilm
 - **Owner:** vscoutvaa
-- **Collaborator:** Jeffrey Nuez (this user)
+- **Founder / owner:** Isaiah Crawford
 - **Workflow:** branches → PR → review → merge. See `CONTRIBUTING.md`.

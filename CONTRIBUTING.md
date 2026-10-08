@@ -128,4 +128,4 @@ If you're using Claude (in Cowork or another setup) to make changes to this repo
 
 ## Questions
 
-Ping Jeffrey (`jeffreynuez1@gmail.com`) or open a GitHub issue if anything's unclear.
+Contact Isaiah or open a GitHub issue if anything's unclear.

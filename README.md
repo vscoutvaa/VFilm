@@ -95,7 +95,7 @@ The prototype is fully responsive and works on any device with a modern browser.
 
 ## 👥 Maintainers
 
-- **Jeffrey Nuez** — Founder, Vanguard Legacy (jeffreynuez1@gmail.com)
+- **Isaiah Crawford** — Founder, Vanguard Legacy
 - Built with collaboration support from Claude (Anthropic)
 
 ## 📄 License
