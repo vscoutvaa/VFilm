@@ -107,7 +107,7 @@
         <h2>Young athlete profile</h2>
         <div class="form-progress"><div class="form-progress-bar" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div><span class="form-progress-label">Step 1 of 4</span></div>
       </div>
-      <form class="signup-form-body" name="young-athlete-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSignup(event, 'young')">
+      <form class="signup-form-body" name="young-athlete-signup" method="POST" data-netlify="true" action="/thanks.html" netlify-honeypot="bot-field" onsubmit="handleSignup(event, 'young')">
         <input type="hidden" name="form-name" value="young-athlete-signup" />
         <p hidden><label>Leave blank <input name="bot-field" /></label></p>
         <div class="field-section">
@@ -180,7 +180,7 @@
         <h2>Professional profile</h2>
         <div class="form-progress"><div class="form-progress-bar" aria-hidden="true"><span class="on"></span><span></span><span></span></div><span class="form-progress-label">Step 1 of 3</span></div>
       </div>
-      <form class="signup-form-body" name="pro-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSignup(event, 'pro')">
+      <form class="signup-form-body" name="pro-signup" method="POST" data-netlify="true" action="/thanks.html" netlify-honeypot="bot-field" onsubmit="handleSignup(event, 'pro')">
         <input type="hidden" name="form-name" value="pro-signup" />
         <p hidden><label>Leave blank <input name="bot-field" /></label></p>
         <div class="field-section">
@@ -242,7 +242,7 @@
         <h2>Fan account</h2>
         <div class="form-progress"><span class="form-progress-label">Takes about a minute</span></div>
       </div>
-      <form class="signup-form-body" name="fan-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSignup(event, 'fan')">
+      <form class="signup-form-body" name="fan-signup" method="POST" data-netlify="true" action="/thanks.html" netlify-honeypot="bot-field" onsubmit="handleSignup(event, 'fan')">
         <input type="hidden" name="form-name" value="fan-signup" />
         <p hidden><label>Leave blank <input name="bot-field" /></label></p>
         <div class="field-section">
@@ -271,7 +271,7 @@
               </select>
             </div>
             <div class="field"><label>Region <span class="opt">Optional</span></label><input name="region" type="text" placeholder="e.g. Northeast US" /></div>
-            <div class="field field-full"><label>A question you'd ask a pro <span class="opt">Optional</span></label><textarea name="a-question-you-d-ask-a-pro" rows="3" placeholder="e.g. What did your routine look like the night before a big game?"></textarea></div>
+            <div class="field field-full"><label>A question you'd ask a pro <span class="opt">Optional</span></label><textarea name="question-for-a-pro" rows="3" placeholder="e.g. What did your routine look like the night before a big game?"></textarea></div>
           </div>
         </div>
 
